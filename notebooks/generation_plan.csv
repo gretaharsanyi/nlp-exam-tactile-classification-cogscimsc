@@ -1,0 +1,337 @@
+job_id,generator,labels,literal,specificity,consistent,anchor_regime,anchors,n_samples
+a2bc8923-6263-436f-a2d2-097f32982389,openai,pressure,0,0,0,strict,PRESS DOWN,10
+b6744b50-f710-488f-838b-c3db80e680cc,claude,nociception+temperature,1,0,0,drift,,10
+ee62e3aa-712b-4950-9557-8f7752da43e5,openai,nociception+vibration+pressure,0,1,1,paraphrase,JOLT; OSCILLATING; COMPRESS,10
+6004162b-d483-4854-9220-abfc1852bdde,claude,nociception+temperature,1,0,0,strict,PAINFULNESS; FREEZE,10
+18d2c5d6-b828-4a68-8c3a-b5024496cdb7,openai,nociception+temperature+pressure,1,0,0,paraphrase,SORE; FRIGID; SQUEEZE,10
+5008943a-2e00-48e3-bc17-36c91c31fdac,claude,temperature,1,1,0,strict,COOLING,10
+ebb72ecd-a016-4a59-bc4a-0dcbb4d20a37,openai,vibration+pressure,1,0,0,paraphrase,VIBRATING; SQUEEZE,10
+d755028e-1c6c-405e-b360-e7e872285468,claude,nociception+temperature+pressure,1,1,0,paraphrase,THORNY; FROSTINESS; COMPRESS,10
+7d4467c6-24d3-4b62-a5e9-02fd339886f9,openai,nociception+vibration+pressure,1,0,0,drift,,10
+69e3e90d-8749-49bd-94d4-20511d9b8c4c,claude,nociception+vibration,1,1,0,drift,,10
+8b328a1f-840f-4cc3-bff9-487ac2021c09,openai,temperature+pressure,0,0,1,drift,,10
+650d566c-ab3c-442c-883c-bb2cfe12e120,claude,temperature,0,0,0,paraphrase,CHILLINESS,10
+50bc7075-76fa-4d9c-91cb-835894f40cea,openai,nociception,0,1,1,strict,ACHING,10
+9b81290d-a9fb-47fe-8cef-7c5a31b81ce8,claude,pressure,0,1,0,strict,TIGHT,10
+1fe764ad-d4c9-4c6c-8b07-40186a4a0fad,openai,pressure,1,1,1,paraphrase,PRESS DOWN,10
+78487bf8-0eaf-4e40-a7c5-5b83392396dc,claude,temperature+pressure,0,0,0,drift,,10
+7a7b7a64-2651-4841-931b-affe85a17573,openai,nociception+pressure,1,0,0,drift,,10
+e4a11eb1-1cd5-475b-bab5-ca2b1f60fe23,claude,nociception+pressure,0,1,1,strict,ELECTRIC SHOCK; PRESS DOWN,10
+35e912ff-b174-49ba-8386-188781ff70a1,openai,nociception+temperature,0,0,1,drift,,10
+c3ccf341-fba1-491d-a38e-a0aad546602d,claude,pressure,0,0,0,paraphrase,COMPRESSIBLE,10
+ebc1ed48-257d-4eeb-8738-3edbe8122e37,openai,nociception+temperature+vibration,1,0,1,strict,BRUISE; WARMNESS; PULSE,10
+f606d094-27d5-4bd1-b306-7ddae4e63140,claude,nociception+vibration,1,0,0,strict,PAINFULNESS; VIBRATION,10
+ba96e057-a829-47d6-a087-3a8e8fbbe94b,openai,pressure,0,0,1,strict,TIGHTNESS,10
+105143ef-5ce7-41b7-9b53-0d3bd9ed7b7d,claude,temperature+vibration+pressure,1,0,0,drift,,10
+04a83ed3-092e-4864-a671-d1667646fc31,openai,vibration,0,1,1,strict,OSCILLATING,10
+e7411046-5edf-4f2f-ba44-8acb84316241,claude,nociception,0,0,1,drift,,10
+b2288d5f-6339-478e-a8a6-2a4c9fe3ff1c,openai,nociception+vibration,1,1,0,paraphrase,SORENESS; VIBRATION,10
+8f9f94a4-5ac9-4656-b8c0-f2a99234733d,claude,nociception+temperature+vibration,1,1,1,strict,ELECTRICAL SHOCK; ICINESS; TREMBLING,10
+253d0299-a64e-4f9d-ae15-b57b19c37706,openai,temperature+pressure,0,1,0,paraphrase,FROZEN; COMPRESS,10
+0cb7c1c4-0226-4dab-8f9e-f4a9b9ffa96a,claude,nociception+temperature,1,0,1,drift,,10
+82f72022-cb3e-4f93-8078-12c694807dbd,openai,temperature,1,1,1,paraphrase,WARMNESS,10
+c086ae0a-db76-418f-85b0-eb4922a2550a,claude,nociception+temperature+pressure,0,0,0,drift,,10
+270677ab-839b-4b32-b07c-7688cf278621,openai,temperature+vibration+pressure,1,1,1,strict,ICY; VIBRATE; COMPRESSION,10
+c7cdb41e-1c17-41b1-850d-8e0af6d7e8c0,claude,nociception,0,0,1,strict,ITCHING,10
+b4af1ab6-eb55-4f4b-81cd-c02ee0c99560,openai,nociception+pressure,0,0,0,strict,HURT; SQUEEZING,10
+a44b9627-d707-4ead-9f2b-83153430a312,claude,vibration+pressure,0,0,1,paraphrase,OSCILLATING; COMPRESSION,10
+aad9466d-35f8-491b-a117-d0a4b0ccd9e0,openai,nociception+pressure,0,0,1,paraphrase,HURTING; TENSION,10
+c9b79978-e934-440e-b7b6-a895fd7d8d69,claude,nociception+temperature+pressure,0,0,0,paraphrase,PRICKED; ICY; TIGHTNESS,10
+0d197a60-e07e-425e-a8b8-600d89bb06d7,openai,pressure,1,1,0,strict,COMPRESSION,10
+b1b6e9fe-b200-4005-8339-1750bdaee600,claude,nociception+vibration+pressure,1,1,1,drift,,10
+24babbdc-3ba8-49bd-9c35-220ad6dbd020,openai,vibration,1,0,1,strict,THROBBING,10
+0a197b5c-a6f2-447c-8e6d-cb594f79c1f0,claude,temperature,0,1,1,strict,FROZEN,10
+057101de-dfcd-4de7-a4af-3b2ce86747d7,openai,temperature+vibration,1,0,0,drift,,10
+a08c8319-b8f3-47a7-8a5f-9d7b3f62d6fa,claude,vibration+pressure,0,1,0,drift,,10
+51c4672c-558d-41e4-bdd3-f6d9f0b4a792,openai,nociception+temperature,1,1,1,paraphrase,BLISTERING; WARMTH,10
+175ff90c-334e-48c8-bf66-70614cb460da,claude,nociception+temperature+pressure,0,1,0,drift,,10
+f6009fce-830a-4030-8664-bde276f8a8aa,openai,nociception+vibration+pressure,1,0,1,strict,THORNY; VIBRATE; COMPRESSION,10
+a5d4cf37-ed2c-469e-9e71-fdc0a426c610,claude,pressure,0,0,1,drift,,10
+fa31d840-fb35-44b3-a657-de8f7d81974d,openai,temperature+vibration,1,0,0,strict,HEAT; TREMBLING,10
+dea9589f-c937-4b7b-a2f9-6a3880c10436,claude,temperature,1,1,1,strict,HOTNESS,10
+ffbf214b-05e2-4aa7-8330-7e3fb443483e,openai,nociception+temperature,1,1,0,drift,,10
+77bbbf17-c61c-4c83-8178-95d4fbd4ef7e,claude,temperature+vibration+pressure,0,0,0,drift,,10
+0559eb92-602a-4f43-bced-0681ddda2189,openai,nociception+pressure,1,1,1,strict,BRUISE; TENSION,10
+62901a34-45ed-4299-af95-50fdacb95df9,claude,temperature+vibration,1,0,1,strict,COOLER; VIBRATE,10
+e3badb25-762c-4a8d-9984-cf260203b910,openai,nociception+temperature+pressure,0,1,1,drift,,10
+32d55279-6f1f-46d0-ab9d-bc9c124a78a2,claude,pressure,0,0,1,paraphrase,SQUEEZING,10
+cf7ed605-9ff4-4484-90f0-30b4defb56a0,openai,nociception,1,0,1,paraphrase,ITCHING,10
+51a02157-977f-4e1f-99ef-8c623e7b2fa0,claude,temperature+vibration,1,0,0,paraphrase,TEPID; VIBRATING,10
+7fd30a10-3783-41f4-af9f-ac0219fda552,openai,temperature+vibration+pressure,1,0,0,paraphrase,FREEZING; PULSATE; PRESSURE,10
+f0e033ba-07b7-4ee3-8522-51a1c99c72a7,claude,nociception,0,1,0,paraphrase,BURN,10
+14dee5c4-fb90-4a37-9cc4-7302c38ebd9c,openai,vibration,0,1,0,paraphrase,TREMBLING,10
+0f2b36d7-3d80-43c8-b126-8facb35ae708,claude,pressure,0,1,1,paraphrase,COMPRESSIBLE,10
+063469af-0a67-416e-9785-f46d8bfda5ba,openai,temperature+pressure,0,0,0,paraphrase,FROZEN; COMPRESSIBLE,10
+886bf376-3b49-4d79-a2b2-f367e2568e7c,claude,nociception+vibration+pressure,0,1,1,drift,,10
+eca8164f-0a85-4a23-88cc-7ec0886d709d,openai,nociception+vibration+pressure,0,1,0,paraphrase,SCALDING; VIBRATION; TIGHT,10
+02a829e7-a912-421c-b53a-d84cc93e08e3,claude,temperature+vibration+pressure,1,0,1,paraphrase,UNHEATED; VIBRATING; TENSION,10
+24bb16e3-2d7e-40b6-b81c-5ef39c547ac2,openai,pressure,1,0,0,strict,PRESS DOWN,10
+db0dd32b-eb8a-4adc-9a9e-eaff3721421a,claude,nociception+temperature+vibration,0,0,1,drift,,10
+7d5a0d3d-41f1-4760-ab2e-e7fad8713ca7,openai,vibration,1,0,0,strict,VIBRATE,10
+5c36c495-87ff-4e1b-85ea-f46bbbf1007c,claude,vibration+pressure,0,1,1,drift,,10
+c75284de-3442-453d-ab41-fe4bc6411f61,openai,temperature+vibration+pressure,0,1,1,paraphrase,OVERHEATED; VIBRATION; SQUEEZE,10
+f8f7d173-060e-44ce-b1f7-74606f51484e,claude,temperature+vibration+pressure,0,1,0,strict,CHILLINESS; PULSATE; PRESSURE,10
+d820a302-739a-4334-b5da-b6166b81248b,openai,nociception,1,0,1,drift,,10
+fbdd08e7-125d-468c-b126-c305d9bff9b0,claude,temperature,0,0,0,strict,OVERHEATED,10
+0ab3eb5d-acf6-419b-b81e-af9eca0e4efa,openai,nociception+vibration,1,0,1,drift,,10
+e34b1c64-eb1f-43e5-9675-a2db04948acb,claude,nociception+vibration,0,0,1,paraphrase,SORENESS; TREMBLING,10
+72324391-8059-43a0-9908-6eae92352686,openai,nociception+vibration+pressure,0,1,0,strict,THORNINESS; PULSE; TIGHT,10
+47a9ef55-6911-414c-b37a-dc8e756f9ab6,claude,temperature+vibration,0,1,1,drift,,10
+158b91b0-8fea-4e6e-91f1-0fb2dd682985,openai,nociception+temperature,1,0,1,strict,JAGGEDNESS; FROSTINESS,10
+1620b53d-a475-4a0d-8686-f3fc684b852b,claude,nociception+temperature,1,1,0,strict,PIERCED; SUPERHEATED,10
+f6c5ad2f-4c97-4fb1-9583-4be60336e6f3,openai,nociception+pressure,0,0,0,paraphrase,PINPRICK; COMPRESSIBLE,10
+2495b699-51a7-4035-a828-911132c9fbc2,claude,temperature+vibration,0,0,0,strict,CHILLING; VIBRATION,10
+444fff09-ca5f-4133-a723-2be11433ece2,openai,nociception+temperature,1,1,1,drift,,10
+ff5964b7-2477-41b9-b8e1-9f518bfe6aa9,claude,nociception+vibration,1,1,1,drift,,10
+eb2f4a74-dffa-4ab0-9242-ec8c392f2c8e,openai,pressure,0,1,0,paraphrase,TIGHT,10
+b13bae8f-4d4e-4a9f-8a81-14ad39724fdc,claude,vibration+pressure,1,0,0,strict,PULSE; TIGHTNESS,10
+2d4e2376-acca-48d0-b49f-af206cf458c7,openai,temperature+vibration,0,0,1,drift,,10
+dc6cb26d-7709-48cd-b4dd-58aab6e25af1,claude,nociception+temperature+vibration,1,1,0,drift,,10
+e8c92601-f013-46e8-a93a-9c541043b3d2,openai,temperature,0,1,0,paraphrase,FROST,10
+455d4410-11d8-49d5-b76f-0a778f0a6ae1,claude,nociception+temperature+vibration,0,1,0,paraphrase,JAGGED; ICY; PULSATE,10
+d48b0707-0f87-4ea0-8567-d38f8dc624dc,openai,nociception+temperature+vibration,1,0,0,paraphrase,JAGGED; FREEZING; VIBRATION,10
+24c63d85-a58a-499f-93f7-b1fd24295cfe,claude,nociception+vibration+pressure,0,0,0,drift,,10
+a1d21d80-976e-4d67-9785-124846573a24,openai,vibration+pressure,1,1,1,strict,PULSE; COMPRESS,10
+175476ac-3678-4eab-8ca6-cd40ce7e65e1,claude,nociception+temperature,1,0,0,paraphrase,PRICKED; WARMNESS,10
+de28a4a1-227e-4bc8-90d4-98cbaff849f5,openai,nociception+pressure,0,0,1,strict,SPIKY; PRESS,10
+8409059e-f412-4e00-9ba7-8d0023272318,claude,vibration,0,1,1,drift,,10
+cdae884d-4776-4266-9e28-27d15fa9004a,openai,nociception+temperature+vibration,1,0,1,paraphrase,BLISTERING; COOLER; VIBRATING,10
+103ace15-8552-414e-8a8a-1800357243d0,claude,nociception,1,0,1,strict,BURNING,10
+dad8e0ed-8f5d-4b2a-a618-f0b6e5804779,openai,nociception,0,1,0,strict,THORNINESS,10
+5c87caad-a530-4dad-8109-d5e834d7d1c6,claude,vibration+pressure,1,0,1,paraphrase,VIBRATE; TENSION,10
+dbc579d0-e464-4bf3-a947-ee8c0e4b50a3,openai,temperature+pressure,1,1,0,paraphrase,COOL; COMPRESS,10
+bb3ed84c-988f-4965-8fbb-e560b29d4e85,claude,pressure,1,1,1,strict,COMPRESS,10
+e9c50adf-308f-4a1b-8740-0ed3ce8158bf,openai,temperature,0,1,0,strict,HEAT,10
+211efbc5-2a89-4c88-b76e-7ac0e429f24e,claude,nociception,1,1,1,paraphrase,PUNCTURE,10
+28465610-7a6f-447e-94a8-ae9aa8a9cbc5,openai,nociception+temperature+pressure,1,1,1,paraphrase,PRICK; ROOM TEMPERATURE; TIGHTNESS,10
+00b97c44-6844-4a19-85e5-05c1f0edfc71,claude,nociception+vibration+pressure,0,1,0,drift,,10
+bf4082de-2829-435b-9aa2-15b1f9666030,openai,vibration,0,1,0,drift,,10
+6d12c9db-312b-42ee-9a20-ff2ac79eb377,claude,temperature+vibration,0,1,1,strict,FREEZING; OSCILLATING,10
+db1cae60-ff7d-4847-ba74-1604549799c4,openai,nociception,0,1,1,paraphrase,SCALDING,10
+f36ec171-992f-485a-a1f5-a9ff39a5a5bd,claude,vibration+pressure,0,0,1,drift,,10
+4aced200-5313-42a1-b46f-aa1dc21e8888,openai,nociception+temperature+vibration,0,1,0,strict,JAGGED; HEATING; VIBRATION,10
+234d5117-3ca4-44d9-956e-c8bac8c03aa7,claude,pressure,0,1,1,strict,TIGHTNESS,10
+93b30155-8338-4fe6-a6d2-0ce11ba891c5,openai,nociception+pressure,0,1,1,drift,,10
+6372c194-3c5f-47fd-bbb5-c404300dca13,claude,temperature,1,0,1,strict,FRIGID,10
+80f6c161-e5ca-49c2-aac8-1cc11872c880,openai,vibration+pressure,1,1,1,paraphrase,TREMBLING; PRESSURE,10
+e854c910-1e56-458d-9fca-b757d3a112af,claude,nociception+temperature,0,1,0,drift,,10
+21624f51-b180-40c5-bf94-09b39250d823,openai,nociception+pressure,1,0,0,paraphrase,BURN; SQUEEZE,10
+0e23f9ac-344e-41c4-8abc-53353850d420,claude,temperature+pressure,0,0,1,strict,COLDISH; SQUEEZE,10
+7d89cdd4-f2df-48c8-8389-a94abfa4c385,openai,temperature+vibration+pressure,0,0,1,paraphrase,ICINESS; PULSATE; SQUEEZE,10
+11ab1248-d765-4e34-b015-e8b6e6d3fa32,claude,temperature+pressure,1,0,1,paraphrase,TEPID; PRESS,10
+9aa9746a-9fb5-41cc-891b-0b95d8c82af5,openai,nociception+vibration,0,1,0,strict,THORNINESS; TREMBLING,10
+228f0afa-6bdb-433e-9269-4ad14b35721c,claude,vibration,1,1,0,strict,PULSE,10
+2a63865b-ebd6-435d-9ae9-46aa95895c50,openai,nociception+temperature+pressure,0,1,0,paraphrase,BURNING; COOLNESS; COMPRESSIBLE,10
+6574803f-c2a0-4a6c-a733-ecb30721506e,claude,nociception,1,1,0,strict,PAIN,10
+3c872b59-e0a9-4970-b75f-42948373aeda,openai,temperature+pressure,0,1,0,strict,ICE COLD; FORCE,10
+a96d00ba-8475-473f-9909-77d0ab0c357b,claude,nociception+pressure,1,1,0,paraphrase,BURN; COMPRESS,10
+802bfd25-7f24-43c3-8374-866e0e4a7594,openai,temperature+pressure,0,1,1,drift,,10
+91cd5957-a912-449b-aa15-d4979be85ee2,claude,nociception,1,1,0,paraphrase,JAGGED,10
+0b020cd6-063f-4268-9f87-ac04262a8c15,openai,vibration+pressure,1,0,1,strict,VIBRATING; FORCE,10
+c57cfa87-0da4-4475-a32b-b0c09a1d71ae,claude,pressure,1,1,0,drift,,10
+1ba7e06a-eb29-44c3-b975-1d88ed306b1c,openai,vibration,1,1,1,strict,VIBRATION,10
+9a25aea8-d6d4-4fe3-a0a5-ea453b401932,claude,temperature+pressure,1,1,0,strict,WARMTH; FORCE,10
+c8302332-cec7-4dc9-8a7d-3a7e71188287,openai,nociception+temperature,0,0,0,strict,INJURE; ICE COLD,10
+defb64f7-efc4-4ee8-81fd-90a349aa4d6a,claude,nociception+temperature,0,0,0,paraphrase,SPIKY; FROSTY,10
+d8620256-9b46-44ac-b8e2-597875069e13,openai,temperature+vibration,0,0,1,paraphrase,COLDNESS; TREMBLING,10
+288986af-7058-44a2-a0cf-b7306d304b66,claude,vibration,1,1,0,drift,,10
+4a32d047-739b-49d2-b071-2f7f95638609,openai,nociception,1,1,1,drift,,10
+c545ac35-57c3-4e23-8763-f8254414b487,claude,temperature,1,0,0,paraphrase,FREEZE,10
+c57e780d-9b19-4287-ac62-95f7877160f9,openai,nociception+temperature+vibration,0,1,1,strict,SORENESS; ICINESS; VIBRATION,10
+71c28d93-9bf2-44fe-a3b5-f0a8cb1100eb,claude,vibration,1,1,0,paraphrase,TREMBLING,10
+8c57128f-f6a5-4508-be33-71574dc38b6c,openai,nociception+temperature+pressure,0,0,1,paraphrase,PRICKING; FROST; PRESSING,10
+6edf7723-0a29-4e02-9fd9-53c8d1228202,claude,nociception+pressure,0,0,0,drift,,10
+812fbef9-6b22-4d41-8646-48eb8d1b807a,openai,nociception+vibration,0,0,1,drift,,10
+a6281ed2-30dc-4eac-b478-555b715352a1,claude,temperature+vibration,0,1,0,drift,,10
+a4691d8a-7706-45ec-a2d7-9c3f139344e7,openai,pressure,1,0,0,drift,,10
+34ffbb6a-819e-40fb-bd72-bef1f2ba3417,claude,nociception+temperature+pressure,1,1,0,drift,,10
+22ba133d-6fdc-4e72-8b00-96b9e9ebd2e5,openai,nociception+temperature+pressure,1,0,1,drift,,10
+c908db43-4e3b-401b-a1c7-14c48f88d6c6,claude,nociception+temperature+pressure,1,1,1,strict,SORE; WARM; FORCE,10
+7224fbe6-538a-4801-9088-b01a02d0ca2e,openai,temperature+pressure,0,1,1,paraphrase,UNHEATED; PRESSING,10
+755eea70-9ea1-4e8b-bbfa-ac1a3be109f5,claude,nociception+temperature+vibration,1,0,0,drift,,10
+27a40739-36eb-4095-85c8-77160a6826e1,openai,nociception+pressure,0,1,0,drift,,10
+8fc9606c-be43-41f6-8fbb-53880b526009,claude,vibration+pressure,0,1,1,strict,OSCILLATING; TIGHTNESS,10
+bf541258-2834-4f6f-9b64-c2ba31712329,openai,vibration+pressure,1,1,1,drift,,10
+7f424a1f-5038-4234-bd65-c51b1cae3b37,claude,vibration+pressure,0,1,0,strict,PULSATE; COMPRESSIBLE,10
+72461716-4ed3-406f-99b0-120df452f91b,openai,nociception+vibration,0,1,1,strict,SPIKINESS; VIBRATE,10
+876241df-9187-4986-a0e6-6a3114727153,claude,temperature,1,0,0,drift,,10
+0351ff9c-d7a3-49bb-8066-3caa2aad24b0,openai,nociception+temperature+vibration,0,0,0,strict,JABBED; HOTNESS; VIBRATION,10
+6b3ec555-5f18-4f42-aa2c-03eb1aef5b34,claude,vibration+pressure,0,1,0,paraphrase,THROBBING; TIGHTNESS,10
+d16c9d75-e7b3-45ea-a7ca-8d22930e6f48,openai,nociception+pressure,1,1,1,drift,,10
+45fb44f9-4919-4f56-a626-381e6bf2a338,claude,nociception+temperature,1,0,1,paraphrase,THORNY; OVERHEATED,10
+2c9a56ac-c1de-49cf-b6d8-f3236eae981d,openai,temperature+pressure,1,0,1,drift,,10
+237d4e8a-5f14-4bcf-912f-11b7faf8781a,claude,temperature+pressure,0,0,1,paraphrase,ICINESS; COMPRESSIBLE,10
+0ae9a503-aa9f-46ff-87ba-d12f6b060904,openai,nociception+temperature,1,1,1,strict,SPIKY; ICE COLD,10
+b057ccf3-c7db-407a-988d-e5a872fe11ce,claude,nociception+vibration+pressure,1,1,1,paraphrase,HURT; THROBBING; PRESSURE,10
+bab7b80a-7043-4918-88f8-13939f859b60,openai,temperature+vibration+pressure,1,0,0,strict,WARMNESS; TREMBLING; PRESS,10
+1dd97385-fd1d-4bdc-8c02-614626a107ef,claude,nociception+vibration+pressure,1,0,1,paraphrase,ELECTRIC SHOCK; VIBRATION; PRESSING,10
+49a1d5b5-1d97-4afa-97e9-392ed1e2c218,openai,nociception+pressure,1,1,0,drift,,10
+71a3b6d4-6599-4b2f-95fb-47f10b0eeeba,claude,temperature+vibration+pressure,1,1,0,paraphrase,ROOM TEMPERATURE; PULSE; COMPRESS,10
+5ac5ce8e-3b12-48f5-a9c2-5cb336ae5ff4,openai,vibration+pressure,1,1,0,strict,VIBRATING; PRESS,10
+c228c915-c50f-4c0d-b360-1d994f210289,claude,nociception+pressure,0,1,1,paraphrase,JAGGEDNESS; SQUEEZE,10
+0cdb0e9e-fed6-429a-ba2d-23a19d635a1e,openai,vibration+pressure,0,0,1,strict,VIBRATING; FORCE,10
+adaf2876-1b19-45a6-922b-25ce337a6151,claude,nociception,0,0,0,drift,,10
+dd46a766-ec57-40d6-9e16-78039a01e31b,openai,nociception+temperature,1,1,0,paraphrase,BURNING; ICE COLD,10
+5c57e116-0257-4dee-b123-7ca94b3a3c01,claude,temperature+vibration,0,1,0,paraphrase,FROST; TREMBLING,10
+c8b3fc7a-fa77-4ef2-93e4-8069030545b4,openai,nociception+temperature+pressure,0,0,1,strict,PAINFUL; TEPID; TENSION,10
+2ac5b875-b291-405f-8be7-b87e69af2906,claude,nociception+vibration,0,0,0,strict,STING; VIBRATION,10
+77407c91-e3b0-477b-a529-c56cdafb460e,openai,nociception+temperature+pressure,1,1,0,strict,BURNING; HEATING; COMPRESSION,10
+d5d2096e-c76f-4e98-8459-a58b7436c8c3,claude,nociception+vibration+pressure,0,0,1,strict,ELECTRICAL SHOCK; THROBBING; COMPRESSIBLE,10
+c8f027e7-68a8-4bb4-9ec5-59d71cc6e497,openai,nociception+vibration,0,1,0,paraphrase,BLISTERING; VIBRATE,10
+ea49bba9-ee7e-4ee4-8893-e6bbbc923638,claude,pressure,0,0,0,drift,,10
+76970bc0-4342-45b4-815b-619e4b518cab,openai,temperature,0,0,1,drift,,10
+01009901-1953-4636-829e-87b6cea29b6e,claude,pressure,0,1,1,drift,,10
+f112e452-558a-43ab-8784-89ed3b4c4ed5,openai,nociception+temperature+pressure,1,0,1,strict,BRUISE; ICINESS; TIGHTNESS,10
+4a5a7298-cb71-4a5a-87c0-2c08ab7fe231,claude,nociception+temperature,0,1,1,drift,,10
+a807f5bb-5acb-42d6-8c0d-1f0b4039b8fb,openai,temperature+vibration,1,0,1,drift,,10
+f99b2e70-4aa5-43cc-8a35-1c687da8ff2b,claude,vibration+pressure,0,1,1,paraphrase,TREMBLING; COMPRESSION,10
+7a4cf822-6fc8-432a-bffa-ff5732d1a6fc,openai,nociception+vibration,1,0,0,paraphrase,JAGGEDNESS; VIBRATION,10
+87570a5a-ef4d-44c7-8665-862ea04a7827,claude,temperature+vibration,1,0,1,paraphrase,WARMNESS; OSCILLATING,10
+a1f56026-abae-4e84-bf7a-18c8916eb0b0,openai,temperature+vibration+pressure,0,0,0,strict,FROST; PULSATE; PRESSURE,10
+b538739d-0203-4026-a90b-2368b2c77be4,claude,temperature,1,1,0,drift,,10
+2fb983d9-9a6b-42af-ac3f-930fde441c9f,openai,nociception+vibration+pressure,1,1,1,strict,JOLT; OSCILLATING; TIGHTNESS,10
+d9a061a6-d9a2-4e32-bebc-d86b21d087f2,claude,vibration,1,0,1,drift,,10
+2f5e0fba-1063-4805-b852-21e46abf27a5,openai,nociception+temperature+vibration,0,0,1,paraphrase,THORNINESS; CHILLED; THROBBING,10
+ef56de33-cfde-4cbf-ab95-434d65fdc43b,claude,pressure,1,0,0,paraphrase,PRESSING,10
+65abfe0a-1bd8-4c43-b6ef-03853e604013,openai,temperature+vibration,1,1,0,strict,COLDISH; PULSE,10
+17207a97-2834-4e06-97ea-36cf0a053cc6,claude,vibration,1,1,1,paraphrase,OSCILLATING,10
+63c7c96f-de5d-429e-b884-764286b090ac,openai,nociception+pressure,1,0,1,strict,PUNCTURE; TIGHTNESS,10
+c2f14244-cd46-4f83-a2e2-7ae04a23b065,claude,nociception,1,0,0,strict,STINGING,10
+25883244-a202-4e2a-bece-c56ca112c0c0,openai,temperature,0,1,1,drift,,10
+1cedb432-0417-4144-a330-5f4597ee8306,claude,temperature,0,0,1,paraphrase,ICE COLD,10
+a11a0b80-7c64-44ce-a43b-7d1af5d536e2,openai,temperature+vibration,0,0,0,drift,,10
+6284ef9e-9661-49b0-a648-7424fad2362f,claude,nociception+vibration,1,1,1,paraphrase,HURT; VIBRATE,10
+60d41897-3c4d-45e3-82d8-ebbbb99835a8,openai,temperature+vibration+pressure,0,0,1,drift,,10
+e0b0dba3-ebad-4ad7-847b-d3d7d33d2db1,claude,nociception+vibration,0,1,1,drift,,10
+b1a42330-2973-4d49-beff-944c4d353a7d,openai,nociception+temperature+pressure,0,1,1,paraphrase,ITCHINESS; WARMTH; TIGHTNESS,10
+521d761c-3f82-4f66-a967-122a1f1e016d,claude,vibration,0,0,1,strict,VIBRATION,10
+b017ed5f-326e-4331-b2cc-aae245ab27e5,openai,pressure,1,1,1,drift,,10
+bca6d492-fdc7-46ef-9862-0f41aa9089d1,claude,temperature+vibration+pressure,0,1,0,drift,,10
+44931afc-0895-4f8a-a1bb-4f1d25678025,openai,temperature+vibration,0,1,1,paraphrase,HOT; VIBRATE,10
+c2677e8b-be3a-43b6-856b-ba71d3574963,claude,temperature+pressure,1,0,0,strict,SUPERHEATED; PRESS DOWN,10
+3d1ab633-3fc1-482d-a6b0-f7f1a1430ebe,openai,nociception+vibration,0,0,1,strict,PRICK; TREMBLING,10
+547a3bc8-9752-4650-af0c-7a584b3c6a79,claude,temperature,1,0,1,drift,,10
+b0df0300-7d9c-419f-b5c0-b77c70d0a420,openai,pressure,1,0,1,drift,,10
+8a2089dc-5300-45a6-aa65-502377d175c7,claude,nociception+temperature+vibration,1,1,1,paraphrase,THORNY; FROST; THROBBING,10
+b389eaff-cbe7-4f4c-b8af-5b5b5e82bfec,openai,temperature+pressure,1,0,0,drift,,10
+860037f6-26d1-4673-be5e-81bffa830985,claude,nociception+vibration,1,0,1,paraphrase,PRICKING; OSCILLATING,10
+3fd172b1-82b2-4ed2-9b66-934e8374c37c,openai,temperature,0,0,0,drift,,10
+e47b8cc4-ff7a-426c-9052-a615a6008f48,claude,temperature+vibration+pressure,1,0,1,drift,,10
+6a444ad0-71e1-44dd-bbe9-c8e2be023b68,openai,nociception+vibration,1,1,1,strict,BURN; VIBRATING,10
+3a9fcc38-5bce-45ea-8f61-e4613a2b806a,claude,nociception+temperature+pressure,1,0,1,paraphrase,PAINFULNESS; FRIGID; PRESSING,10
+9a11d82c-4d81-4b24-9136-bb4a853eda19,openai,nociception+temperature+vibration,0,1,0,drift,,10
+677d6f63-4faa-4465-85b3-433c365fa5be,claude,nociception,0,0,0,strict,THORNY,10
+12a647a6-2e9b-4bb4-b8e2-293f6a461023,openai,nociception+vibration+pressure,1,0,0,paraphrase,SPIKY; PULSATE; FORCE,10
+8cbbca0e-33b8-423f-bf6d-8735ec89292d,claude,nociception+vibration+pressure,0,0,0,strict,PUNCTURE; THROBBING; COMPRESS,10
+22acc861-fc12-4a66-88bf-f0a43dbc098b,openai,nociception+vibration+pressure,1,0,1,drift,,10
+b8827f75-5068-4455-9638-97109d11a101,claude,nociception+temperature,0,0,1,paraphrase,BURN; WARMNESS,10
+843ef343-07f9-439b-91ab-8d79763d856e,openai,temperature+pressure,0,0,0,strict,WARMING; PRESSURE,10
+0913735a-9b01-422c-8991-65b968bbe445,claude,nociception+vibration+pressure,0,0,0,paraphrase,PAINFUL; TREMBLING; SQUEEZE,10
+9e02a4d8-9cd9-482a-8ab0-7a3c667edfce,openai,vibration+pressure,0,0,0,drift,,10
+bce5e42c-5efe-4e71-8e6b-22e89f61a3da,claude,temperature+pressure,1,1,1,strict,CHILLINESS; SQUEEZING,10
+e6dde751-4a70-4e01-9d1e-8bc175ed2ec9,openai,nociception+temperature,0,1,0,paraphrase,BURN; WARMNESS,10
+cad56148-8e1a-4b32-aa0a-0509db269681,claude,temperature+vibration,0,0,1,strict,ICY; VIBRATE,10
+66e2d752-8315-4eef-b023-62f6b3bb33aa,openai,nociception+temperature,0,0,0,drift,,10
+f3ccf92b-dae4-4dea-bd31-4d4a798f8f1b,claude,temperature,1,0,0,strict,LUKEWARM,10
+0d7b34d0-30d1-4153-af5a-f6fdc1c9222f,openai,temperature+pressure,1,1,1,drift,,10
+eaca31f6-7733-4f14-a3c5-d7bf118b9d28,claude,vibration,1,0,0,paraphrase,PULSATE,10
+f3e7f56f-9873-43e5-b356-c7a21903d220,openai,nociception+pressure,0,1,0,strict,ELECTRICAL SHOCK; PRESSING,10
+8d7c792e-6fdc-44d6-8310-cd3d0c871dd6,claude,temperature,1,1,1,drift,,10
+77ab889e-7c92-4a3e-b03f-fdac7e6aa81e,openai,nociception+temperature+vibration,0,1,1,paraphrase,ITCHING; FROSTINESS; VIBRATING,10
+3a66bedf-9716-4286-99af-53e28ab7cb00,claude,nociception+temperature+pressure,1,0,0,drift,,10
+765ec4e7-ab43-4296-964c-2577d6721382,openai,nociception,0,1,1,drift,,10
+430db093-86bc-4341-acac-a07a76badc6f,claude,temperature+vibration+pressure,1,1,0,drift,,10
+91db1cf1-5305-4fde-b21a-ef2f7c4b1c7b,openai,temperature+pressure,0,1,0,drift,,10
+c22b5076-028f-4939-a21b-81dd0fd2536f,claude,nociception+vibration+pressure,1,0,0,strict,PRICK; VIBRATING; COMPRESSION,10
+2a1e707d-734d-424f-82c1-aa8d5e46061f,openai,temperature,0,0,1,strict,HEATING,10
+222ac82e-ad56-4190-869c-933fc4e1e17b,claude,temperature+vibration+pressure,0,1,0,paraphrase,WARMING; PULSE; SQUEEZING,10
+41b9d02c-f0d8-45c9-869e-2b0a81a778ec,openai,vibration+pressure,1,0,0,drift,,10
+fe2f55f5-1fcf-4209-b367-4d90a8920614,claude,vibration+pressure,1,0,1,drift,,10
+17e6d278-ec8e-442e-a568-a6b602fa31f8,openai,nociception,0,0,1,paraphrase,THORNINESS,10
+70aa7bb9-ef08-4a8d-a9e6-3a6c71d33c4f,claude,nociception+vibration,0,0,0,drift,,10
+198578fc-3b35-44f0-ae54-45fe6cb54b26,openai,temperature,0,1,0,drift,,10
+aa469ce7-9064-471d-904a-4331cd87f9ba,claude,temperature+vibration+pressure,0,0,1,strict,UNHEATED; VIBRATION; COMPRESSION,10
+790c0e36-5f59-470d-b610-478c7166e06a,openai,nociception+pressure,1,1,0,strict,ITCHINESS; TIGHTNESS,10
+7432b321-f9d4-47ae-ad87-2b241067df47,claude,nociception+temperature+vibration,1,1,0,strict,ELECTRIC SHOCK; TEPID; VIBRATING,10
+09a12f83-caf1-4216-a58f-0c45e6a23be1,openai,nociception+temperature+pressure,1,1,1,drift,,10
+dc9b38d8-2e4d-4839-b0bb-6afeae8d6e81,claude,nociception+temperature+vibration,0,0,0,drift,,10
+68bc644e-5e86-4f5b-baf8-29a531667487,openai,nociception+vibration,1,1,0,strict,ITCHING; VIBRATION,10
+36df15c6-c045-48bb-9cf5-9300b2358938,claude,vibration,1,0,0,drift,,10
+a70240b0-c73a-4638-972f-3cdadb308dce,openai,nociception+vibration,1,0,1,strict,STINGING; PULSATE,10
+596cac65-4297-44b8-8d6c-8b2fea992677,claude,nociception+vibration,0,1,0,drift,,10
+b3bdb04a-e9d5-44b5-90bb-fcb9a018ee92,openai,nociception,0,1,0,drift,,10
+e38ce3db-1b34-4d53-8e9f-dd7f2ce8d212,claude,vibration,1,0,1,paraphrase,PULSATE,10
+76d62cb2-db6c-4dc9-b118-4bfc16b4d504,openai,nociception,1,0,0,drift,,10
+431ec4f3-b9f1-4f54-8285-345c09602fd2,claude,nociception+pressure,1,0,0,strict,PIERCED; COMPRESSIBLE,10
+3c38f003-8ba6-42fa-bbb1-303853f815bb,openai,temperature,1,0,1,paraphrase,ICY,10
+cc51288e-e68f-4000-908e-bb70004fff46,claude,temperature+vibration+pressure,0,1,1,strict,ICY; VIBRATING; FORCE,10
+446b47fd-73e6-4976-a1ee-1b6b6ef96ddf,openai,nociception+vibration+pressure,0,1,1,strict,BLISTERING; PULSE; PRESS DOWN,10
+c5aea566-4a07-487f-b072-21ce6efe3656,claude,vibration+pressure,0,0,0,strict,OSCILLATING; PRESS,10
+d0a4ffe3-b28f-46a3-a166-d0e4dd6d6179,openai,nociception+vibration+pressure,0,0,1,paraphrase,BRUISE; OSCILLATING; TIGHTNESS,10
+f9db36ce-ea74-42c4-a78b-44fe34f7d975,claude,vibration+pressure,1,1,0,drift,,10
+390ade7c-1f50-4a15-b877-afdee59acda3,openai,temperature+pressure,1,0,1,strict,COLDISH; SQUEEZE,10
+7524d4a3-f284-4abc-a5cf-1258559d34a1,claude,temperature+pressure,1,1,0,drift,,10
+0af72997-2d37-4b0a-aebe-823bc6d6f099,openai,nociception+vibration+pressure,1,1,0,strict,BLISTERING; VIBRATION; PRESSING,10
+5bd55606-ce02-432b-810e-d040a2472ae0,claude,nociception+temperature+vibration,0,1,1,drift,,10
+3b496a86-c9ea-4c41-8d2b-8b0587602f7f,openai,temperature+vibration+pressure,1,0,1,strict,ICE COLD; VIBRATING; SQUEEZE,10
+1be59913-bd56-4cef-a8c2-77f2e2ba8334,claude,nociception+vibration+pressure,1,1,0,paraphrase,PINPRICK; VIBRATE; SQUEEZING,10
+29569cfb-f67c-4a8e-8e13-bd88ddc52cb7,openai,nociception+temperature+pressure,0,0,1,drift,,10
+447a5800-2d7f-4161-85ff-3e4e008c7fe5,claude,temperature+pressure,0,1,1,strict,HEATING; COMPRESSION,10
+9dc6f771-2900-43f0-847b-16006f9997b7,openai,nociception+pressure,1,0,1,drift,,10
+d8ae52ce-c9a5-4304-9557-3c3669c4fb5c,claude,temperature,1,1,0,paraphrase,SUPERHEATED,10
+1fafef2a-4828-401b-b705-434148bb2982,openai,vibration+pressure,0,0,0,paraphrase,PULSATE; PRESSING,10
+80123efd-e6ff-43a0-9733-a82070e955a3,claude,temperature+vibration,1,1,1,paraphrase,HOTNESS; VIBRATING,10
+fa09e2b2-719e-4217-8054-54ad1f9f2f4c,openai,nociception+temperature+vibration,1,1,0,paraphrase,SCALDING; WARMNESS; PULSE,10
+480dcfc4-c12c-4a27-b782-7dcfb9d854eb,claude,nociception+temperature,0,1,1,strict,PIERCED; HEATING,10
+6206332e-261a-4585-9228-3fb20ff98bb0,openai,vibration,0,0,1,drift,,10
+6acec550-40cc-45b2-9e4f-138d264d233b,claude,nociception,0,0,0,paraphrase,ACHING,10
+62b6fdcc-97d4-46bb-92f9-d7785d393143,openai,vibration,0,0,0,paraphrase,VIBRATION,10
+fbad64a9-afb4-40c4-b1b1-e47255ccfb55,claude,pressure,0,1,0,drift,,10
+0d2ee9e1-071e-44d9-ab93-e13c16082c7e,openai,temperature+pressure,1,0,0,paraphrase,COOLNESS; TENSION,10
+8896944c-b024-4f19-b052-b3ed5a9e15c3,claude,temperature,0,1,1,paraphrase,CHILLINESS,10
+91d5afee-9eb4-4c9c-bced-93337ea9854e,openai,nociception+temperature+vibration,1,1,1,drift,,10
+80d2733e-1776-4ceb-bfc3-a7d36774c950,claude,pressure,1,1,0,paraphrase,COMPRESS,10
+9fbbeafc-288b-45ed-be90-0de9150266ff,openai,vibration,0,0,1,paraphrase,TREMBLING,10
+2734c832-955c-479d-88da-2c9449f7e1d1,claude,nociception+temperature+pressure,0,0,0,strict,SCALDING; ICE COLD; COMPRESSION,10
+3049059f-fbc8-40a0-a452-4834c830dc2c,openai,nociception+temperature+vibration,0,0,0,paraphrase,STINGING; HOT; VIBRATE,10
+be2a0ef0-60bd-4e51-ad7e-193fc6dd3f51,claude,nociception,1,0,0,paraphrase,SPIKY,10
+3ed4ca35-b83f-4ab1-bb5b-0b16019892da,openai,pressure,1,0,1,paraphrase,COMPRESSION,10
+13f2cf87-35de-4bd0-bb48-cf5b573bc6db,claude,nociception+temperature+pressure,0,1,1,strict,ACHING; CHILLED; TIGHT,10
+6c76748b-b16d-423c-a23b-bd06d9462373,openai,nociception+pressure,1,1,1,paraphrase,BURNING; PRESS DOWN,10
+47e0e832-e968-4340-8837-89838a550066,claude,temperature+vibration+pressure,1,1,0,strict,WARMNESS; THROBBING; COMPRESS,10
+8e6aaded-769c-4c05-bd74-ac43b2e7a710,openai,nociception+vibration,1,0,0,drift,,10
+ad685dcd-c782-4cb7-96f2-51282d287165,claude,temperature+vibration+pressure,0,1,1,drift,,10
+47b74a88-82e6-46ef-a935-137a14cea2fb,openai,nociception+temperature+vibration,0,0,1,strict,INJURE; FREEZE; THROBBING,10
+1dc2a882-5bf3-480b-8ae5-ca23bb291e2e,claude,vibration,0,1,0,strict,VIBRATE,10
+b9e6f942-6d8e-4049-80a0-722f27f32f9c,openai,vibration,0,0,0,drift,,10
+39bcb298-b33e-4e8d-8381-3ef2de12ee4e,claude,temperature+vibration,0,1,0,strict,WARM; VIBRATION,10
+8f2ac6bd-1011-4a20-aac4-6e693210e532,openai,temperature+vibration,1,1,1,strict,SUPERHEATED; PULSATE,10
+c8a5693c-b8bd-4cb5-97bc-5e713f4202ac,claude,temperature+vibration+pressure,1,1,1,paraphrase,HOT; THROBBING; PRESSURE,10
+fd0fb3a6-5d15-472d-94ec-220f97edf49b,openai,temperature+vibration,1,1,0,paraphrase,WARMTH; VIBRATE,10
+999f39ec-30ef-4f71-9165-e9fb9cc3c666,claude,temperature+vibration,0,0,0,paraphrase,TEPID; OSCILLATING,10
+672373d9-4c26-48a6-816c-001aa2d55f6b,openai,vibration,0,1,1,paraphrase,VIBRATION,10
+4b325d52-6819-49cc-818d-c689dcb9ae0d,claude,vibration,0,0,0,strict,OSCILLATING,10
+6de0a1b8-c566-4b32-aeb9-7f150a4ae91a,openai,vibration+pressure,1,1,0,paraphrase,OSCILLATING; COMPRESSION,10
+1c317079-a30f-42ca-94ff-613dee3fb63f,claude,nociception+temperature+vibration,1,0,0,strict,ELECTROSHOCK; CHILLY; PULSATE,10
+57c0395b-b0a5-4812-8584-336c495be574,openai,nociception,1,1,1,strict,ACHE,10
+b1bb4f3b-fb75-4ea7-a02f-8da211e12b96,claude,temperature+vibration+pressure,0,0,0,paraphrase,WARM; TREMBLING; COMPRESSION,10
+e862769f-d8c5-44fa-8678-612498703091,openai,nociception+pressure,1,0,1,paraphrase,ELECTRICAL SHOCK; PRESS DOWN,10
+e6363367-17a4-4815-992b-723919334652,claude,nociception+temperature+pressure,1,0,0,strict,JAGGEDNESS; COLDER; TIGHTNESS,10
+f0125b26-a11f-46c4-a4b3-f3f8e6b877de,openai,temperature+vibration,1,1,1,drift,,10
+77cc6752-05b4-4bac-b31b-29ee471e3b17,claude,nociception+vibration+pressure,0,0,1,drift,,10
+2f35ec0f-4bd3-4cc7-8a8a-4c0981c397a4,openai,nociception+temperature+vibration,1,0,1,drift,,10
+8f1c39c5-f2b0-41b2-af21-0da22b34f294,claude,nociception+vibration+pressure,1,1,0,drift,,10
+e2c5dc5d-33aa-4d8f-8dc5-9dd8b816bb15,openai,nociception+pressure,0,0,1,drift,,10
+7ced4333-316f-4d42-acff-643102b74664,claude,nociception+vibration,0,1,1,paraphrase,SCALDING; OSCILLATING,10
+372f1336-96c8-476f-8472-c3aa9e0c10f1,openai,nociception+pressure,0,1,0,paraphrase,PUNCTURE; PRESSURE,10
+b47d3717-f3a2-4126-aeec-5877c2a46cf1,claude,nociception+temperature,0,0,1,strict,PRICKED; FROST,10
+ec74acbd-483d-4500-a3ae-275ac44fb2c6,openai,pressure,1,0,1,strict,SQUEEZING,10
+27039159-ec9f-4358-9b47-bb5a76695367,claude,temperature+pressure,1,1,1,paraphrase,HEAT; TIGHT,10
+577b478f-7855-4c6c-af62-e0d051ca34e7,openai,nociception+vibration,0,0,0,paraphrase,ELECTROSHOCK; THROBBING,10
+a908f63c-6d86-465c-930a-39969acf1cbb,claude,temperature+vibration+pressure,1,1,1,drift,,10
+3b5abfd6-eb1a-4edd-95d0-aef7641065c0,openai,nociception,1,1,0,drift,,10
+e717a67e-a2e9-4f87-b715-0e7e74d7b9ec,claude,temperature+vibration,1,1,0,drift,,10
+7bf5ea35-ef1f-43cc-a492-e46d4bdf949b,openai,vibration,1,1,1,drift,,10
+f9ae6e42-980b-4102-87f2-4e945dd5c35e,claude,nociception+temperature,0,1,1,paraphrase,ELECTRIC SHOCK; CHILLED,10
+8efd55a1-b1e4-49dd-8292-1ecd2a3e3e40,openai,nociception+temperature+pressure,0,1,0,strict,SORE; UNHEATED; FORCE,10
+cef57f94-675b-484d-a3b8-e216e0eaefeb,claude,nociception+temperature,0,1,0,strict,PRICKING; ICY,10
