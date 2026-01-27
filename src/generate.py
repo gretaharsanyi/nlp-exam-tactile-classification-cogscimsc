@@ -1,5 +1,5 @@
 # src/generate.py
-import os, json, time, hashlib, random
+import os, json, time, hashlib, random, re
 from typing import List, Dict, Any, Optional
 from pathlib import Path
 
@@ -56,6 +56,29 @@ def parse_anchors(anchors_field: str) -> List[str]:
         return []
     return [a.strip() for a in str(anchors_field).split(";") if a.strip()]
 
+def _anchor_regex_for_phrase(anchor: str) -> re.Pattern:
+    """
+    Build a regex that matches reasonable grammatical variants for anchors,
+    including multi-word anchors like 'PRESS DOWN'.
+
+    For 'press down' we accept:
+    press down / presses down / pressed down / pressing down
+    (case-insensitive, allowing whitespace between words)
+    """
+    a = anchor.strip().lower()
+    a = re.sub(r"\s+", " ", a)
+
+    # Special-case verb+particle anchor that we know is problematic
+    if a == "press down":
+        return re.compile(r"\bpress(?:es|ed|ing)?\s+down\b", flags=re.IGNORECASE)
+
+    # Fallback: exact phrase match (case-insensitive, flexible whitespace)
+    escaped = re.escape(a).replace(r"\ ", r"\s+")
+    return re.compile(rf"\b{escaped}\b", flags=re.IGNORECASE)
+
+def strict_anchor_present(text: str, anchor: str) -> bool:
+    return _anchor_regex_for_phrase(anchor).search(text) is not None
+
 def passes_validation(text: str, row: pd.Series) -> (bool, str):
     txt = (text or "").strip()
     if len(txt) < MIN_CHARS:
@@ -73,8 +96,7 @@ def passes_validation(text: str, row: pd.Series) -> (bool, str):
     anchors = parse_anchors(row.get("anchors", ""))
 
     if anchor_regime == "strict":
-        low = txt.lower()
-        missing = [a for a in anchors if a.lower() not in low]
+        missing = [a for a in anchors if not strict_anchor_present(txt, a)]
         if missing:
             return False, f"missing_anchors:{','.join(missing[:3])}"
     elif anchor_regime == "paraphrase":
@@ -139,6 +161,7 @@ Style:
 - first person, bodily sensation focus
 - The description should read as a naturally written sentence. Any required anchor word must be integrated smoothly into the grammar of the sentence and should not appear forced or highlighted.
 - Frame the description as a passive bodily sensation. Avoid first-person motor actions or intentional touch; the sensation should be experienced, not enacted.
+- If an anchor is verb-like, embed it in a passive construction (e.g., "seems to press down") rather than an intentional action.
 - avoid reusing the same phrasing across outputs; keep wording varied
 - no medical advice, no diagnosis, no mention of datasets or labels
 
@@ -182,10 +205,40 @@ def call_claude(system: str, user: str) -> str:
     return "\n".join(parts).strip()
 
 def safe_json_load(s: str) -> Optional[Dict[str, Any]]:
-    try:
-        return json.loads(s)
-    except Exception:
+    """
+    Robustly parse JSON even if the model wraps it in ```json fences
+    or includes minor formatting noise.
+    """
+    if not s:
         return None
+    t = s.strip()
+
+    # Strip markdown code fences if present: ```json ... ``` or ``` ... ```
+    if t.startswith("```"):
+        t = re.sub(r"^```(?:json)?\s*", "", t.strip(), flags=re.IGNORECASE)
+        t = re.sub(r"\s*```$", "", t.strip())
+
+    # Try direct load
+    try:
+        return json.loads(t)
+    except Exception:
+        pass
+
+    # Extract first JSON object substring
+    m = re.search(r"\{.*\}", t, flags=re.DOTALL)
+    if m:
+        candidate = m.group(0).strip()
+        try:
+            return json.loads(candidate)
+        except Exception:
+            # Common typo: extra trailing "}"
+            if candidate.endswith("}}"):
+                try:
+                    return json.loads(candidate[:-1])
+                except Exception:
+                    pass
+
+    return None
 
 
 # ---------------------------
@@ -238,7 +291,7 @@ def run(plan_csv: str, max_jobs: Optional[int] = None):
         while accepted < n_samples and attempts < n_samples * 8:
             attempts += 1
 
-            # NEW: variation per attempt (no semantic slot-filling)
+            # variation per attempt (no semantic slot-filling)
             style = random.choice(STYLE_SEEDS)
             variation_note = (
                 f"Variation seed: write in a {style} style. "
@@ -267,7 +320,7 @@ def run(plan_csv: str, max_jobs: Optional[int] = None):
                 rejected += 1
                 continue
 
-            text = str(js["items"][0])
+            text = str(js["items"][0]).strip()
 
             ok, reason = passes_validation(text, row)
             if not ok:
