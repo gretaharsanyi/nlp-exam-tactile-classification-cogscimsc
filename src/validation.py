@@ -25,6 +25,7 @@ except Exception:
 def normalize_ws(s: str) -> str:
     return re.sub(r"\s+", " ", (s or "").strip())
 
+
 def parse_anchors(anchors_field: str) -> List[str]:
     if anchors_field is None:
         return []
@@ -33,9 +34,11 @@ def parse_anchors(anchors_field: str) -> List[str]:
         return []
     return [a.strip() for a in s.split(";") if a.strip()]
 
+
 def has_metaphor_marker(text: str) -> bool:
     t = f" {text.lower()} "
     return any(m in t for m in METAPHOR_MARKERS)
+
 
 def _seed_terms_upper() -> Set[str]:
     out: Set[str] = set()
@@ -44,15 +47,33 @@ def _seed_terms_upper() -> Set[str]:
             out.add(str(t).strip().upper())
     return out
 
+
 _SEED_UPPER = _seed_terms_upper()
 
+
+def _norm(s: str) -> str:
+    """
+    Normalize for matching:
+    - lowercase
+    - hyphen -> space
+    - collapse whitespace
+    """
+    s = (s or "").lower().replace("-", " ")
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+
 def _simple_inflections_for_single_word(word: str) -> Set[str]:
-    w = word.lower().strip()
+    """
+    Lightweight morphology. We keep this intentionally simple (not a full lemmatizer).
+    """
+    w = _norm(word)
     if not w:
         return set()
     variants = {w}
 
     variants.add(w + "s")
+    variants.add(w + "es")
     variants.add(w + "ed")
     variants.add(w + "ing")
 
@@ -64,59 +85,168 @@ def _simple_inflections_for_single_word(word: str) -> Set[str]:
 
     return {v for v in variants if v}
 
-def strict_anchor_present(text: str, anchor: str) -> bool:
-    t = text.lower()
-    a = anchor.strip()
+
+# Small, high-impact family mapping for anchors that frequently surface in different forms.
+# This is meant to *reduce rejects* from trivial morphological variation.
+_MORPH_FAMILY = {
+    # vibration family
+    "vibration": {"vibrate", "vibrating", "vibrations"},
+    "vibrate": {"vibration", "vibrating", "vibrations"},
+    "vibrating": {"vibration", "vibrate", "vibrations"},
+    # pressure / press family
+    "press": {"pressure", "pressing", "pressed"},
+    "pressure": {"press", "pressing", "pressed"},
+    "pressing": {"press", "pressure", "pressed"},
+    # compress family
+    "compress": {"compresses", "compressed", "compressing", "compression", "compressible"},
+    "compression": {"compress", "compressed", "compressing", "compressible"},
+    "compressible": {"compress", "compressed", "compressing", "compression"},
+    # pulse family
+    "pulse": {"pulsate", "pulsing", "pulses"},
+    "pulsate": {"pulse", "pulsing", "pulses"},
+    "pulsing": {"pulse", "pulsate", "pulses"},
+    # temperature-ish families that show up a lot
+    "freeze": {"freezing", "frozen", "frost", "frosty"},
+    "frozen": {"freeze", "freezing", "frost", "frosty"},
+    "frost": {"frosty", "frostiness", "frozen", "freezing"},
+    "frosty": {"frost", "frostiness", "frozen", "freezing"},
+    "icy": {"iciness"},
+    "iciness": {"icy"},
+    "warm": {"warmth", "warmness", "warming"},
+    "warmth": {"warm", "warmness", "warming"},
+    "heat": {"heating", "hot", "hotness", "warming"},
+    "cool": {"cooling", "coolness"},
+    "cold": {"coldness", "colder", "coldish", "chilly", "chilled"},
+    # nociception-ish families (common)
+    "sting": {"stinging"},
+    "stinging": {"sting"},
+    "ache": {"aching"},
+    "aching": {"ache"},
+    "sore": {"soreness"},
+    "soreness": {"sore"},
+    "hurt": {"hurting"},
+    "hurting": {"hurt"},
+    "tight": {"tightness"},
+    "tightness": {"tight"},
+    "tense": {"tension"},
+    "tension": {"tense"},
+    "prick": {"pricking", "pricked", "pinprick"},
+    "pricking": {"prick", "pricked", "pinprick"},
+    "pricked": {"prick", "pricking", "pinprick"},
+}
+
+
+# Special multiword anchors that need phrase-level flexibility
+_SPECIAL_MULTIWORD = {
+    "ice cold": {"ice cold", "icecold", "ice-cold"},
+    "room temperature": {
+        "room temperature",
+        "room temp",
+        "room-temp",
+        "ambient temperature",
+        "at room temperature",
+        "ambient",
+    },
+    "electric shock": {"electric shock", "electrical shock", "electroshock"},
+    "press down": {"press down", "pressing down", "pressed down"},
+}
+
+
+def _anchor_variants(anchor: str) -> Set[str]:
+    """
+    Build a permissive (but still anchored) set of acceptable surface forms for a planned anchor.
+    """
+    a = _norm(anchor)
     if not a:
-        return True
+        return set()
 
-    a_upper = a.upper()
-    a_lower = a.lower()
+    variants: Set[str] = {a}
 
-    # Multi-word anchor: match with simple verb inflection on first token
-    if " " in a_lower:
-        tokens = a_lower.split()
-        first = re.escape(tokens[0])
-        rest = r"\s+".join(re.escape(tok) for tok in tokens[1:])
-        pattern = rf"\b{first}(?:s|es|ing|ed)?\b\s+{rest}\b"
-        return re.search(pattern, t) is not None
+    # Phrase-level flexibility for a few anchors that often get paraphrased in a "still essentially same" way
+    if a in _SPECIAL_MULTIWORD:
+        variants |= {_norm(x) for x in _SPECIAL_MULTIWORD[a]}
 
-    # Single-word anchor: try helpers
-    variants: Set[str] = set()
+    # If multiword, accept hyphen/space and "collapsed" forms
+    if " " in a:
+        variants.add(a.replace(" ", ""))  # e.g., "ice cold" -> "icecold"
+        return variants
+
+    # 1) Try your existing anchor-family helpers if present
+    helper_variants: Set[str] = set()
     if expand_anchor_family is not None:
         try:
-            variants = {v.lower() for v in expand_anchor_family(a)}  # type: ignore
+            helper_variants |= {_norm(v) for v in expand_anchor_family(anchor)}  # type: ignore
         except Exception:
-            variants = set()
+            pass
 
-    if not variants and get_family_variants is not None:
+    if get_family_variants is not None:
         try:
-            variants = {v.lower() for v in get_family_variants(a, SEEDS)}  # type: ignore
+            helper_variants |= {_norm(v) for v in get_family_variants(anchor, SEEDS)}  # type: ignore
         except Exception:
-            variants = set()
+            pass
 
-    # No helper: permissive SEEDS-based fallback
+    variants |= helper_variants
+
+    # 2) Add lightweight inflections
+    variants |= _simple_inflections_for_single_word(a)
+
+    # 3) Add small family mapping (high value for your rejects)
+    if a in _MORPH_FAMILY:
+        variants |= {_norm(v) for v in _MORPH_FAMILY[a]}
+        for v in _MORPH_FAMILY[a]:
+            variants |= _simple_inflections_for_single_word(v)
+
+    # 4) SEEDS-based fallback: if the anchor is in your seed universe, add inflections for near matches
+    a_upper = a.upper()
+    if a_upper in _SEED_UPPER:
+        variants |= _simple_inflections_for_single_word(a)
+
+    # Also allow inflections of any seed term that is substring-related (kept conservative)
+    for term_upper in _SEED_UPPER:
+        term = term_upper.lower()
+        if term == a:
+            continue
+        if a in term or term in a:
+            variants |= _simple_inflections_for_single_word(term)
+
+    return {v for v in variants if v}
+
+
+def _contains_any_variant(text: str, anchor: str) -> bool:
+    """
+    Check if text contains the anchor in any acceptable variant.
+    Uses word boundaries; for multiword variants, allows flexible whitespace.
+    """
+    t = _norm(text)
+    variants = _anchor_variants(anchor)
     if not variants:
-        if a_upper in _SEED_UPPER:
-            variants |= _simple_inflections_for_single_word(a_lower)
+        return True
 
-        for term_upper in _SEED_UPPER:
-            term = term_upper.lower()
-            if term == a_lower:
-                variants |= _simple_inflections_for_single_word(term)
-                continue
-            if a_lower in term or term in a_lower:
-                variants |= _simple_inflections_for_single_word(term)
-
-    variants.add(a_lower)
-
+    # Prefer longer matches first (slightly reduces accidental boundary matches)
     for v in sorted(variants, key=len, reverse=True):
-        if re.search(rf"\b{re.escape(v)}\b", t):
+        # Turn spaces into \s+ for robust matching
+        pattern = r"\b" + re.escape(v).replace(r"\ ", r"\s+") + r"\b"
+        if re.search(pattern, t):
             return True
-
     return False
 
+
+def strict_anchor_present(text: str, anchor: str) -> bool:
+    """
+    Strict regime: require the planned anchor concept to appear,
+    allowing common surface variants (case, hyphenation, inflection, a few family mappings).
+    """
+    a = (anchor or "").strip()
+    if not a:
+        return True
+    return _contains_any_variant(text, a)
+
+
 def paraphrase_anchor_leak(text: str, anchor: str) -> bool:
+    """
+    Paraphrase regime: forbid exact ALL-CAPS anchor leakage only.
+    (We keep this strict to preserve the intended "no exact anchor string" constraint.)
+    """
     if not anchor:
         return False
 
@@ -126,6 +256,7 @@ def paraphrase_anchor_leak(text: str, anchor: str) -> bool:
     # exact ALL-CAPS only
     pattern = rf"(?<!\w){re.escape(a)}(?!\w)"
     return re.search(pattern, txt) is not None
+
 
 def passes_validation(text: str, row: pd.Series) -> Tuple[bool, str]:
     txt = normalize_ws(text)

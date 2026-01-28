@@ -116,4 +116,4 @@ def run(plan_csv: str, max_jobs: Optional[int] = None):
 
 
 if __name__ == "__main__":
-    run(plan_csv="notebooks/generation_plan.csv", max_jobs=2)
+    run(plan_csv="notebooks/generation_plan.csv", max_jobs=None)
