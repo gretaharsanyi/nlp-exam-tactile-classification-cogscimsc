@@ -5,11 +5,11 @@ import pandas as pd
 
 from src.config import MIN_CHARS, MAX_CHARS, METAPHOR_MARKERS
 
-# Import seed set / helpers from your existing file
+# importing seedset 
 try:
-    from src.anchors import SEEDS  # must exist
+    from src.anchors import SEEDS
 except Exception:
-    from anchors import SEEDS  # type: ignore
+    from anchors import SEEDS
 
 try:
     from src.anchors import expand_anchor_family  # type: ignore

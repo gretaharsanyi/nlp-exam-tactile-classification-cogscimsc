@@ -1,12 +1,11 @@
 # src/anchors.py
 from __future__ import annotations
-
 import re
 from dataclasses import dataclass
 from typing import Dict, Iterable, List, Optional, Set, Tuple
 
 
-# Your seed set (kept as-is, but completed the pressure list bracket/brace)
+# seed set
 SEEDS: Dict[str, List[str]] = {
     "nociception": [
         "PAIN","PAINFUL","PAINFULNESS","BURN","BURNING","SCALDING","BLISTERING",
@@ -37,19 +36,16 @@ SEEDS: Dict[str, List[str]] = {
 
 def _basic_inflections(token: str) -> Set[str]:
     """
-    Very lightweight English-ish inflection expansion for single words.
-    (Enough to catch ACHING/ACHED/ACHES, JOLT/JOLTS/JOLTED/JOLTING, etc.)
+    Very lightweight English-ish inflection expansion for single words
     """
     t = token.lower()
 
-    # If it's already a multiword phrase, don't inflect here.
+    # if it's already a multiword phrase, don't inflect
     if " " in t:
         return {t}
 
     forms = {t}
 
-    # Already looks like an inflected form
-    # (Still keep it as a member; we don't try to reverse-stem.)
     # Add a few likely alternates.
     if t.endswith("ing"):
         forms.add(t[:-3])  # aching -> ach
@@ -58,7 +54,7 @@ def _basic_inflections(token: str) -> Set[str]:
     if t.endswith("s"):
         forms.add(t[:-1])  # jolts -> jolt
 
-    # Regular-ish expansions
+    # regular-ish expansions
     if t.endswith("y") and len(t) > 2:
         forms.update({t[:-1] + "ies", t[:-1] + "ied"})
     else:
@@ -66,7 +62,7 @@ def _basic_inflections(token: str) -> Set[str]:
         forms.add(t + "ed")
         forms.add(t + "ing")
 
-    # Some common doubling pattern (jog->jogging etc) is ignored on purpose.
+    # some common doubling pattern (jog->jogging etc) is ignored on purpose
     return forms
 
 
@@ -74,7 +70,7 @@ def _phrase_variants(phrase: str) -> Set[str]:
     """
     Expand a phrase like 'PRESS DOWN' into common natural variants:
     'press down', 'pressing down', 'pressed down', 'presses down'
-    Also allow optional hyphen 'press-down' in matching via regex later.
+    Also allowing optional hyphen 'press-down' in matching via regex later
     """
     p = phrase.lower().strip()
     if " " not in p:
@@ -124,8 +120,8 @@ class AnchorMatchResult:
 
 def _compile_family_regex(family: Iterable[str]) -> re.Pattern:
     """
-    Compile a regex that matches any family member as a whole word / phrase.
-    For phrases we allow spaces or hyphens between words.
+    Compiling a regex that matches any family member as a whole word / phrase
+    For phrases we allow spaces or hyphens between words
     """
     alts: List[str] = []
     for f in set(family):
@@ -158,9 +154,9 @@ def check_anchors(
     leak_only_if_allcaps: bool = True,
 ) -> AnchorMatchResult:
     """
-    - Missing: anchor family not found in text.
+    - Missing: anchor family not found in text
     - Leak: only if the literal anchor appears in ALL CAPS (or exact-cased as provided),
-      which is usually the true "control token leaked" case.
+      which is usually the true "control token leaked" case
     """
     planned = parse_anchors_planned(anchors_planned)
     if not planned:
@@ -188,11 +184,9 @@ def check_anchors(
 
         if leak_only_if_allcaps:
             # Only flag "leak" if the anchor appears as ALL CAPS literally
-            # (this catches "PRESS DOWN" pasted in caps, but NOT "jolts")
             if canon in t:
                 leaked.append(canon)
         else:
-            # If you ever want strict "anchor must not appear at all", set False above and use this.
             if rx.search(t_low):
                 leaked.append(canon)
 

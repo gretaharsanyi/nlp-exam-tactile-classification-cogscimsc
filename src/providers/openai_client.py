@@ -1,7 +1,6 @@
 import os
 from tenacity import retry, wait_exponential, stop_after_attempt
 from openai import OpenAI
-
 from src.config import OPENAI_MODEL
 
 _openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))

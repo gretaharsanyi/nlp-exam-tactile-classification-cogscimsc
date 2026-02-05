@@ -10,13 +10,11 @@ def safe_json_load(s: str) -> Optional[Dict[str, Any]]:
 
     raw = s.strip()
 
-    # 1) direct JSON
     try:
         return json.loads(raw)
     except Exception:
         pass
 
-    # 2) fenced ```json ... ```
     m = _JSON_FENCE_RE.search(raw)
     if m:
         candidate = m.group(1).strip()
@@ -25,7 +23,6 @@ def safe_json_load(s: str) -> Optional[Dict[str, Any]]:
         except Exception:
             pass
 
-    # 3) try to extract the first {...} block (best-effort)
     start = raw.find("{")
     end = raw.rfind("}")
     if start != -1 and end != -1 and end > start:

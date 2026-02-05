@@ -1,7 +1,6 @@
 import os
 from tenacity import retry, wait_exponential, stop_after_attempt
 import anthropic
-
 from src.config import CLAUDE_MODEL
 
 _claude_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
